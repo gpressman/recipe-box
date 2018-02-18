@@ -1,0 +1,188 @@
+#app {
+  height:100%;
+  width:100%;
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:0;  
+    background-color: #000;
+    opacity:0;
+    &.updated {
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      opacity:.5;  
+    }
+  }
+  .outer_container {
+    max-width:700px;
+    min-width:50%;
+    height:100%;
+    margin: 0 auto;
+    .container {
+      padding:30px;
+      margin-top:50px;
+      text-align:left;
+      background-color:rgb(236,238,239);
+      border: 1px solid #ccc;
+      .recipe_container {
+        margin-bottom:4px;
+        &:last-of-type {
+          margin-bottom:0;
+        }
+        .recipe {
+          cursor:pointer;
+          list-style-type: none;
+          padding:15px;
+          line-height:50px;
+          color:green;
+          background-color:lightgreen;
+          border: 1px solid #ccc;
+        }
+        .ingredients {
+          height:0px;
+          padding-left:15px;
+          overflow:hidden;
+          background-color:white;
+          .ingredients_title {
+            text-align:center;
+            margin:0;
+          }
+          .ingredient {
+            text-align:left;
+            list-style-type:none;
+            border:1px solid #ccc;
+            margin:0;
+            padding:8px 0 8px 5px;
+          }         
+          .actions {
+            margin-top:7px;
+            input {
+              font-size:18px;
+              padding:4px;
+              border-radius:6px;   
+            }            
+            .edit_recipe {
+              cursor:pointer;
+              border:1px solid #ccc;
+            }            
+            .delete_recipe {
+              cursor:pointer;
+              background-color:#d9534f;
+              border-color: #fff;
+              color: #fff;
+              margin-right:5px;
+            }
+          }
+        }
+      }   
+    }
+    .add_button {
+      background-color:#337ab7;
+      color:white;
+      font-size:22px;
+      padding:6px 10px 6px 10px;
+      border-color:#2e6da4;
+      margin-top:10px;
+      border-radius:3px;
+    }  
+    .modal {
+      max-width:450px;
+      width:75%;
+      background:white;
+      left:50%;
+      transform: translate(-50%, 0);
+      padding:10px 2px 15px 2px;
+      margin: 0 auto;
+      z-index:1041;
+      position:fixed;
+      top:50px;
+      opacity:0;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      box-shadow:0 5px 15px rgba(0,0,0,.5);
+      border:1px solid rgba(0,0,0,.2);
+      border-radius:6px;
+      &.updated {
+       -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        opacity:1;
+      }
+      .modal_titles_container {
+        border-bottom: 1px solid lightgrey;
+        padding: 5px 0 5px 0;
+        margin-bottom:10px;
+        .add_title {
+          padding-left:7.5px;
+          margin:5px 0 5px 0;
+          font-size:18px;  
+          display:inline-block;         
+        }
+        .close_modal {
+          float:right;
+          margin: 5px 7.5px 0 0;
+          color:lightgrey;
+          text-shadow: 0 1px 0 #fff;
+          text-decoration:none;
+          font-weight:700;
+        }
+      }     
+      .modal_footer {
+        text-align:right;
+        padding:10px 15px 10px 0;
+        .save_recipe, footer_close {
+          width:90px !important;
+          margin-bottom: 0;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.42857143;
+          display: inline-block;
+          padding: 6px 12px;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          -ms-touch-action: manipulation;
+          touch-action: manipulation;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          background-image: none;
+          border-radius: 4px;          
+        }
+        .save_recipe {
+          background-color: #337ab7;
+          color: #fff;
+          border-color: #2e6da4;
+          border: 1px solid transparent;
+        }
+        .footer_close {
+          margin-left: 5px;
+          color: #333;
+          background-color: #fff;
+          border-color: #ccc;
+          border: 1px solid #e5e5e5;
+        }
+      }     
+      input, label, textarea {
+        position:relative;
+        left:7.5px;
+        width:95%
+      }
+      input, textarea {
+        border:1px solid #ccc;
+      }
+    }
+  }
+}
+
+
